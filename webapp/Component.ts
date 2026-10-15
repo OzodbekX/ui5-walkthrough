@@ -5,30 +5,18 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 export default class Component extends UIComponent {
-	public static metadata = {
-		"interfaces": ["sap.ui.core.IAsyncContentCreation"]
-	};
-	init(): void {
-		super.init();
-		const data = {
-			recipient: {
-				name: "World"
-			}
-		};
-		const dataModel = new JSONModel(data);
-		this.setModel(dataModel);
-
-		const i18nModel = new ResourceModel({
-			"bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
-			"supportedLocales": [""],
-			"fallbackLocale": ""
-		});
-		this.setModel(i18nModel, "i18n");
-	};
-	createContent(): Control | Promise<Control | null> | null {
-		return XMLView.create({
-			"viewName": "ui5.tutorial.walkthrough.view.App",
-			"id": "app"
-		});
-	};
-};
+  public static metadata = {
+    interfaces: ["sap.ui.core.IAsyncContentCreation"],
+    manifest: "json",
+  };
+  init(): void {
+    super.init();
+    const data = {
+      recipient: {
+        name: "World",
+      },
+    };
+    const dataModel = new JSONModel(data);
+    this.setModel(dataModel);
+  }
+}
