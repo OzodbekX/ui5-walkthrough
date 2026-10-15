@@ -23,6 +23,10 @@
     }
   },
   "sap.ui5": {
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
     "dependencies": {
       "minUI5Version": "1.148",
       "libs": {
@@ -43,7 +47,18 @@
           "supportedLocales": [""],
           "fallbackLocale": ""
         }
+      },
+      "invoices": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/localInvoices.json"
       }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
     }
   }
 }
