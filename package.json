@@ -6,18 +6,14 @@
   "private": true,
   "scripts": {
     "start": "ui5 serve -o index.html",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier --write . --ignore-unknown",
-    "format:check": "prettier --check . --ignore-unknown"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@openui5/types": "^1.148.9",
-    "@prettier/plugin-xml": "3.4.2",
+    "@openui5/types": "1.148.9",
     "@ui5/cli": "^4.0.53",
-    "prettier": "3.9.10",
     "typescript": "^6.0.3",
-    "ui5-middleware-livereload": "3.3.1",
-    "ui5-middleware-serveframework": "3.8.1",
+    "ui5-middleware-livereload": "^3.3.1",
+    "ui5-middleware-serveframework": "^3.8.1",
     "ui5-tooling-transpile": "^3.11.0"
   }
 }
