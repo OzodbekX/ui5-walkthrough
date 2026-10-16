@@ -23,6 +23,11 @@ server:
     configuration:
       transformModulesToUI5:
         autoConvertAllExtendClasses: true
+  - name: ui5-middleware-simpleproxy
+    afterMiddleware: compression
+    mountPath: /V2
+    configuration:
+      baseUri: "https://services.odata.org/V2"
   - name: ui5-middleware-serveframework
     afterMiddleware: compression
   - name: ui5-middleware-livereload
