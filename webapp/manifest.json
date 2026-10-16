@@ -5,7 +5,9 @@
     "type": "application",
     "i18n": {
       "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
-      "supportedLocales": [""],
+      "supportedLocales": [
+        ""
+      ],
       "fallbackLocale": ""
     },
     "title": "{{appTitle}}",
@@ -44,11 +46,13 @@
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
           "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
-          "supportedLocales": [""],
+          "supportedLocales": [
+            ""
+          ],
           "fallbackLocale": ""
         }
       },
-      "invoices": {
+      "invoice": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/localInvoices.json"
       }
