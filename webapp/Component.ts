@@ -15,5 +15,7 @@ export default class Component extends UIComponent {
 		};
 		const model = new JSONModel(data);
 		this.setModel(model);
+		this.getRouter().initialize();
+
 	};
 };

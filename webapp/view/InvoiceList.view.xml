@@ -40,12 +40,14 @@
             }"
                 numberUnit="{view>/currency}"
                 numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                type="Navigation"
+                press=".onPress"
             >
                 <firstStatus>
                     <ObjectStatus
                         core:require="{
-                     Formatter: 'ui5/tutorial/walkthrough/model/formatter'
-                  }"
+                            Formatter: 'ui5/tutorial/walkthrough/model/formatter'
+                        }"
                         text="{
                      path: 'invoice>Status',
                      formatter: 'Formatter.statusText.bind($controller)'
