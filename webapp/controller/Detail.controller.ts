@@ -2,6 +2,9 @@ import Controller from "sap/ui/core/mvc/Controller";
 import Route, { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
 import UIComponent from "sap/ui/core/UIComponent";
+import ProductRating, { ProductRating$ChangeEvent } from "../control/ProductRating";
+import ResourceModel from "sap/ui/model/resource/ResourceModel";
+import MessageToast from "sap/m/MessageToast";
 
 
 export default class Detail extends Controller {
@@ -12,6 +15,8 @@ export default class Detail extends Controller {
 	}
 
 	onObjectMatched(event: Route$PatternMatchedEvent): void {
+		(this.byId("rating") as ProductRating).reset();
+
 		this.getView()?.bindElement({
 			path: "/" + window.decodeURIComponent( (event.getParameter("arguments") as any).invoicePath),
 			model: "invoice"
@@ -28,5 +33,12 @@ export default class Detail extends Controller {
 		}
 
     }
+	onRatingChange(event:ProductRating$ChangeEvent): void {
+				const value = event.getParameter("value");
+		const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+
+		MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
+
+	}
 };
 
